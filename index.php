@@ -6,7 +6,6 @@
 <?php
 if(isset($_POST[keyword])){
 	$keyword=preg_replace("/\s/i", "+", $_POST[keyword]);
-	//grep yt-lockup-content | grep -v list= | awk -F'"' '{print "http://youtube.com" $6 " " $12}' | tail -12 | head -3
 	$url="https://www.youtube.com/results?search_query=" . $keyword;
 	$curl = curl_init();
 	curl_setopt ($curl, CURLOPT_URL, $url);

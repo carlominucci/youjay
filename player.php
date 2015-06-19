@@ -7,11 +7,11 @@ foreach (glob(sys_get_temp_dir() . "/" . "*.yjpl") as $filename) {
     $arrfile[filemtime($filename)] = $filename;
 }
 echo count($arrfile) . " video in coda...<br />";
-sort($arrfile);
-$tmp=trim($arrfile[0], ".yjpl");
-$tmp=trim($tmp, "/tmp/");
+ksort($arrfile);
 if(count($arrfile) > 0){
-	unlink($arrfile[0]);
+	$tmp=trim(min($arrfile), ".yjpl");
+	$tmp=trim($tmp, "/tmp/");
+	unlink(min($arrfile));
 ?>
     <div id="player"></div>
     <script>

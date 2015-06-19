@@ -16,6 +16,8 @@ if(isset($_POST[keyword])){
 	$arr1=split("\"", $array[3]);
 	$arr2=split("\"", $array[4]);
 	$arr3=split("\"", $array[5]);
+	$arr4=split("\"", $array[6]);
+	$arr5=split("\"", $array[7]);
 	echo $arr1[10];
 	$t=explode(".", $arr1[21]);
 	$t=explode(": ", $t[0]);
@@ -33,6 +35,18 @@ if(isset($_POST[keyword])){
 	$t=explode(": ", $t[0]);
 	echo " - " . $t[1];
 	$tmp=split("=", $arr3[4]);
+	echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><br />";
+	echo $arr3[10];
+	$t=explode(".", $arr3[21]);
+	$t=explode(": ", $t[0]);
+	echo " - " . $t[1];
+	$tmp=split("=", $arr3[4]);
+	echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><br />";
+	echo $arr5[10];
+	$t=explode(".", $arr5[21]);
+	$t=explode(": ", $t[0]);
+	echo " - " . $t[1];
+	$tmp=split("=", $arr5[4]);
 	echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><br />";
 }
 ?>

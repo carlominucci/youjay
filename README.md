@@ -16,5 +16,8 @@ che è quella con la funzione di ricerca. Dal computer, possibilmente collegato 
 tutta la playlist. In questa pagina è presente anche un link per passare al brano successivo.
 
 ## Ringraziamenti ##
-* Riccardo Mariani: per il brainstorming.
+* Riccardo Mariani: per il brainstorming e la proprietà intellettuale.
 * Rodolfo Brocchini: per la disponibilità della casa per le cene.
+
+## Problemi noti ##
+Pare che, per motivi misteriosi, non giri sui server di altervista.

@@ -18,6 +18,7 @@ tutta la playlist. In questa pagina è presente anche un link per passare al bra
 ## Ringraziamenti ##
 * Riccardo Mariani: per il brainstorming e la proprietà intellettuale.
 * Rodolfo Brocchini: per la disponibilità della casa per le cene.
+* Fabio Napodano: per il dummy test e per l'email.
 
 ## Problemi noti ##
 Pare che, per motivi misteriosi, non giri sui server di altervista.

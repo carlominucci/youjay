@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <body>
+<head>
+	<title>YouJay player</title>
+</head>
+<body>
 <?php
 $arrfile=array();
 foreach (glob(sys_get_temp_dir() . "/" . "*.yjpl") as $filename) {
@@ -36,10 +39,11 @@ if(count($arrfile) > 0){
       }
       var done = false;
       function onPlayerStateChange(event) {
+      	alert(player.getPlayerState() + player.getCurrentTime());
         if (player.getPlayerState() == 0){
         	location.reload();
         }
-        /*if (player.getPlayerState() == -1 && player.getPlayerState() != 1){
+        /*if (player.getPlayerState() < 0){
         	document.write("Problema con il video, passo al successivo tra 5 secondi...");
         	setTimeout("location.reload(true);", 5000);
         }*/

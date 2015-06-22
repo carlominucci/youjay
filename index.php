@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>YouJay</title>
+</head>
+
+<body>
 <img src="youjay_logo.png" alt="youjay" /><br />
 <form action="index.php" method="post">
 <input type="text" name="keyword" />
@@ -68,3 +75,5 @@ if(isset($_POST[keyword])){
 	echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><br />\n";
 }
 ?>
+</body>
+</html>

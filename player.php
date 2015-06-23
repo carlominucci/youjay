@@ -30,7 +30,8 @@ if(count($arrfile) > 0){
           videoId: '<?php echo $tmp; ?>',
           events: {
             'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
+            'onStateChange': onPlayerStateChange,
+            'onError': onChangeVideo
           }
         });
       }
@@ -38,11 +39,20 @@ if(count($arrfile) > 0){
         event.target.playVideo();
       }
       var done = false;
+      function onChangeVideo(event){
+
+      	location.reload();
+      }
       function onPlayerStateChange(event) {
-      	alert(player.getPlayerState() + player.getCurrentTime());
-        if (player.getPlayerState() == 0){
-        	location.reload();
+      	//alert(player.getPlayerState());
+      	alert(onError());
+      	if (player.get.PlayerState() == -1){
+      		
+        	if (player.getPlayerState() == 0){
+        		location.reload();
+        	}
         }
+        
         /*if (player.getPlayerState() < 0){
         	document.write("Problema con il video, passo al successivo tra 5 secondi...");
         	setTimeout("location.reload(true);", 5000);
@@ -55,7 +65,18 @@ if(count($arrfile) > 0){
 <?php }else{
 	echo "Nessun video in coda al momento...";
 }
-?>
-    <br /><a href="player.php">Avanti...</a>
+?>	<br />
+	<!-- <form action="player.php" method="post">
+		Seleziona il tempo massimo per ogni video:<select name="time">
+			<option value="0" selected="true">nessuno</option>
+			<option value="1" >1 min.</option>
+			<option value="2" >2 min.</option>
+			<option value="3" >3 min.</option>
+			<option value="4" >4 min.</option>
+			<option value="5" >5 min.</option>
+			<option value="6" >6 min.</option>
+		</select>
+	</form>-->
+	<a href="player.php">Avanti...</a> 
   </body>
 </html>

@@ -1,4 +1,15 @@
 body{
     font-family: Verdana;
     background-color: #eee;
+    border: 5px solid #fff;
+    margin: 0px;
+    padding: 10px;
+}
+
+hr{
+	border: 0;
+    height: 2px;
+    background: #ddd;
+    margin-left: -10px;
+    margin-right: -10px;
 }

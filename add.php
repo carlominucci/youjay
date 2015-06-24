@@ -3,7 +3,7 @@
 <head>
 	<title>YouJay</title>
 	<link href="style.css" rel="stylesheet" type="text/css">
-	<meta http-equiv ="refresh" content="5; url=index.php">
+	<meta http-equiv ="refresh" content="3; url=index.php">
 </head>
 
 <body>

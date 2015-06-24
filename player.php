@@ -63,8 +63,7 @@ if(count($arrfile) > 0){
         player.stopVideo();
       }
     </script>
-<?php }else{
-	echo "Nessun video in coda al momento...";
+<?php
 }
 ?>	<br />
 	<!-- <form action="player.php" method="post">

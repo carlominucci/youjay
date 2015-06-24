@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>YouJay</title>
+	<title>YouJay</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<img src="youjay_logo.png" alt="youjay" /><br />
 <form action="index.php" method="post">
+<img src="youjay_logo.png" alt="youjay" />
 <input type="text" name="keyword" />
 <input type="submit" value="cerca" />
-</form>
+</form><hr />
 <?php
 if(isset($_POST[keyword])){
 	$keyword=preg_replace("/\s/i", "+", $_POST[keyword]);
-	$url="https://www.youtube.com/results?search_query=" . $keyword;
+	$url="https://www.youtube.com/results?safesearch=strict&search_query=" . $keyword;
 	$curl = curl_init();
 	curl_setopt ($curl, CURLOPT_URL, $url);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -34,7 +35,7 @@ if(isset($_POST[keyword])){
 	$img5=split("\"", $arrimg[5]);
 
 	
-	echo "<img src=\"http:" . $img1[2] . "\" alt=\"" . $arr1[10] . "\" /><br />";
+	echo "<img src=\"http:" . $img1[2] . "\" alt=\"" . $arr1[10] . "\" height=\"100\" /><br />";
 	echo $arr1[10];
 	$t=explode(".", $arr1[21]);
 	$t=explode(": ", $t[0]);
@@ -42,7 +43,7 @@ if(isset($_POST[keyword])){
 	$tmp=split("=", $arr1[4]);
 	echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><br />\n";
 	
-	echo "<img src=\"http:" . $img2[2] . "\" alt=\"" . $arr2[10] . "\" /><br />";
+	echo "<img src=\"http:" . $img2[2] . "\" alt=\"" . $arr2[10] . "\" height=\"100\" /><br />";
 	echo $arr2[10];
 	$t=explode(".", $arr2[21]);
 	$t=explode(": ", $t[0]);
@@ -50,7 +51,7 @@ if(isset($_POST[keyword])){
 	$tmp=split("=", $arr2[4]);
 	echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><br />\n";
 	
-	echo "<img src=\"http:" . $img3[2] . "\" alt=\"" . $arr3[10] . "\" /><br />";
+	echo "<img src=\"http:" . $img3[2] . "\" alt=\"" . $arr3[10] . "\"height=\"100\" /><br />";
 	echo $arr3[10];
 	$t=explode(".", $arr3[21]);
 	$t=explode(": ", $t[0]);
@@ -58,7 +59,7 @@ if(isset($_POST[keyword])){
 	$tmp=split("=", $arr3[4]);
 	echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><br />\n";
 	
-	echo "<img src=\"http:" . $img4[2] . "\" alt=\"" . $arr4[10] . "\" /><br />";
+	echo "<img src=\"http:" . $img4[2] . "\" alt=\"" . $arr4[10] . "\" height=\"100\" /><br />";
 	echo $arr3[10];
 	$t=explode(".", $arr3[21]);
 	$t=explode(": ", $t[0]);
@@ -66,7 +67,7 @@ if(isset($_POST[keyword])){
 	$tmp=split("=", $arr3[4]);
 	echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><br />\n";
 	
-	echo "<img src=\"http:" . $img5[2] . "\" alt=\"" . $arr5[10] . "\" /><br />";
+	echo "<img src=\"http:" . $img5[2] . "\" alt=\"" . $arr5[10] . "\" height=\"100\" /><br />";
 	echo $arr5[10];
 	$t=explode(".", $arr5[21]);
 	$t=explode(": ", $t[0]);

@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>YouJay player</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <?php

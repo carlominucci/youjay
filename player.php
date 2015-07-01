@@ -1,3 +1,15 @@
+<?php
+session_start();
+if(!isset($_SESSION["id"])){
+	$_SESSION["id"] = "0";
+}else{
+	$_SESSION["id"]++;
+}
+//echo "sessionid " . $_SESSION["id"];
+$tmp=date("Ymd");
+$lines=file(sys_get_temp_dir() . "/" . $tmp . ".yjpl");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,16 +18,14 @@
 </head>
 <body>
 <?php
-$arrfile=array();
-foreach (glob(sys_get_temp_dir() . "/" . "*.yjpl") as $filename) {
-    $arrfile[filemtime($filename)] = $filename;
+
+echo count($lines) . " video in coda...<br />";
+echo "video: " . ($_SESSION["id"]+1) . "<br />";
+if($_SESSION["id"] >= (count($lines)-1)){
+	session_unset();
+	session_destroy();
 }
-echo count($arrfile) . " video in coda...<br />";
-ksort($arrfile);
-if(count($arrfile) > 0){
-	$tmp=trim(min($arrfile), ".yjpl");
-	$tmp=trim($tmp, "/tmp/");
-	unlink(min($arrfile));
+if(count($lines) > 0){
 ?>
     <div id="player"></div>
     <script>
@@ -28,7 +38,7 @@ if(count($arrfile) > 0){
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: '<?php echo $tmp; ?>',
+          videoId: '<?php echo str_replace("\n", "", $lines[$_SESSION["id"]]); ?>',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange,
@@ -48,12 +58,13 @@ if(count($arrfile) > 0){
       	//alert(player.getPlayerState());
       	alert(onError());
       	if (player.get.PlayerState() == -1){
-      		
+
         	if (player.getPlayerState() == 0){
-        		location.reload();
+        		//location.reload();
+        		location.assign("player.php")
         	}
         }
-        
+
         /*if (player.getPlayerState() < 0){
         	document.write("Problema con il video, passo al successivo tra 5 secondi...");
         	setTimeout("location.reload(true);", 5000);
@@ -77,6 +88,6 @@ if(count($arrfile) > 0){
 			<option value="6" >6 min.</option>
 		</select>
 	</form>-->
-	<a href="player.php">Avanti...</a> 
+	<a href="player.php">Avanti...</a>
   </body>
 </html>

@@ -5,7 +5,7 @@ if(!isset($_SESSION["id"])){
 }elseif(isset($_SESSION["id"])){
 	$_SESSION["id"]++;
 }
-echo "!!" . $_SESSION["id"] . "!!";
+//echo "!!" . $_SESSION["id"] . "!!";
 //echo "sessionid " . $_SESSION["id"];
 $tmp=date("Ymd");
 

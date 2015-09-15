@@ -16,7 +16,7 @@ fclose($file);*/
 $data=date("U");
 $tmp=date("Ymd");
 $fp=fopen(sys_get_temp_dir() . "/" . $tmp . ".yjpl", 'a');
-fwrite($fp, $_GET[add] . "\n");
+fwrite($fp, $_GET["add"] . "\n");
 fclose($fp);
 ?>
 Traccia aggiunta alla playlist.<br />

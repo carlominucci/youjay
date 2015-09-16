@@ -31,6 +31,13 @@ if(isset($_POST["keyword"])){
 		}else{
 			$array=split("yt-lockup-content", $result);
 			$arrimg=split("yt-thumb video-thumb", $result);
+			$arrtime=split("video-time", $result);
+
+			$time1=$arrtime[2];
+			$time2=$arrtime[3];
+			$time3=$arrtime[4];
+			$time4=$arrtime[5];
+			$time5=$arrtime[6];
 
 			$arr1=split("\"", $array[3]);
 			$arr2=split("\"", $array[4]);
@@ -49,7 +56,9 @@ if(isset($_POST["keyword"])){
 			echo $arr1[10];
 			$t=explode(".", $arr1[21]);
 			$t=explode(": ", $t[0]);
-			echo " - " . $t[1];
+			$time=explode(">", $time1);
+			echo " - " .substr($time[1], 0, -6);
+			//echo " - " . $t[1];
 			$tmp=split("=", $arr1[4]);
 			echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><hr />\n";
 
@@ -57,7 +66,9 @@ if(isset($_POST["keyword"])){
 			echo $arr2[10];
 			$t=explode(".", $arr2[21]);
 			$t=explode(": ", $t[0]);
-			echo " - " . $t[1];
+			$time=explode(">", $time2);
+                        echo " - " .substr($time[1], 0, -6);
+			//echo " - " . $t[1];
 			$tmp=split("=", $arr2[4]);
 			echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><hr />\n";
 
@@ -65,7 +76,9 @@ if(isset($_POST["keyword"])){
 			echo $arr3[10];
 			$t=explode(".", $arr3[21]);
 			$t=explode(": ", $t[0]);
-			echo " - " . $t[1];
+			$time=explode(">", $time3);
+                        echo " - " .substr($time[1], 0, -6);
+			//echo " - " . $t[1];
 			$tmp=split("=", $arr3[4]);
 			echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><hr />\n";
 
@@ -73,7 +86,9 @@ if(isset($_POST["keyword"])){
 			echo $arr3[10];
 			$t=explode(".", $arr3[21]);
 			$t=explode(": ", $t[0]);
-			echo " - " . $t[1];
+			$time=explode(">", $time4);
+                        echo " - " .substr($time[1], 0, -6);
+			//echo " - " . $t[1];
 			$tmp=split("=", $arr3[4]);
 			echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><hr />\n";
 
@@ -81,7 +96,9 @@ if(isset($_POST["keyword"])){
 			echo $arr5[10];
 			$t=explode(".", $arr5[21]);
 			$t=explode(": ", $t[0]);
-			echo " - " . $t[1];
+			$time=explode(">", $time5);
+                        echo " - " .substr($time[1], 0, -6);
+			//echo " - " . $t[1];
 			$tmp=split("=", $arr5[4]);
 			echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><hr />\n";
 		}

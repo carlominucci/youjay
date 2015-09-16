@@ -6,9 +6,9 @@
 </head>
 
 <body>
+<img src="logo_small.png" alt="youjay" />
 <form action="index.php" method="post">
-<img src="youjay_logo.png" alt="youjay" />
-<input type="text" name="keyword" />
+<input type="text" size="35" name="keyword" />
 <input type="submit" value="cerca" />
 </form><hr />
 <?php

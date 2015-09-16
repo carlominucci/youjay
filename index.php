@@ -54,51 +54,36 @@ if(isset($_POST["keyword"])){
 
 			echo "<img src=\"http:" . $img1[4] . "\" alt=\"" . $arr1[10] . "\" height=\"100\" />";
 			echo $arr1[10];
-			$t=explode(".", $arr1[21]);
-			$t=explode(": ", $t[0]);
 			$time=explode(">", $time1);
 			echo " - " .substr($time[1], 0, -6);
-			//echo " - " . $t[1];
 			$tmp=split("=", $arr1[4]);
 			echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><hr />\n";
 
 			echo "<img src=\"http:" . $img2[4] . "\" alt=\"" . $arr2[10] . "\" height=\"100\" />";
 			echo $arr2[10];
-			$t=explode(".", $arr2[21]);
-			$t=explode(": ", $t[0]);
 			$time=explode(">", $time2);
                         echo " - " .substr($time[1], 0, -6);
-			//echo " - " . $t[1];
 			$tmp=split("=", $arr2[4]);
 			echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><hr />\n";
 
-			echo "<img src=\"http:" . $img3[4] . "\" alt=\"" . $arr3[10] . "\"height=\"100\" />";
+			echo "<img src=\"http:" . $img3[4] . "\" alt=\"" . $arr3[10] . "\" height=\"100\" />";
 			echo $arr3[10];
-			$t=explode(".", $arr3[21]);
-			$t=explode(": ", $t[0]);
 			$time=explode(">", $time3);
                         echo " - " .substr($time[1], 0, -6);
-			//echo " - " . $t[1];
 			$tmp=split("=", $arr3[4]);
 			echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><hr />\n";
 
 			echo "<img src=\"http:" . $img4[4] . "\" alt=\"" . $arr4[10] . "\" height=\"100\" />";
 			echo $arr3[10];
-			$t=explode(".", $arr3[21]);
-			$t=explode(": ", $t[0]);
 			$time=explode(">", $time4);
                         echo " - " .substr($time[1], 0, -6);
-			//echo " - " . $t[1];
 			$tmp=split("=", $arr3[4]);
 			echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><hr />\n";
 
 			echo "<img src=\"http:" . $img5[4] . "\" alt=\"" . $arr5[10] . "\" height=\"100\" />";
 			echo $arr5[10];
-			$t=explode(".", $arr5[21]);
-			$t=explode(": ", $t[0]);
 			$time=explode(">", $time5);
                         echo " - " .substr($time[1], 0, -6);
-			//echo " - " . $t[1];
 			$tmp=split("=", $arr5[4]);
 			echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><hr />\n";
 		}

@@ -57,35 +57,35 @@ if(isset($_POST["keyword"])){
 			$time=explode(">", $time1);
 			echo " - " .substr($time[1], 0, -6);
 			$tmp=split("=", $arr1[4]);
-			echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><hr />\n";
+			echo " <a href=\"add.php?id=" . $tmp[1] . "&title=" . $arr1[10] . "\">add</a><hr />\n";
 
 			echo "<img src=\"http:" . $img2[4] . "\" alt=\"" . $arr2[10] . "\" height=\"100\" />";
 			echo $arr2[10];
 			$time=explode(">", $time2);
                         echo " - " .substr($time[1], 0, -6);
 			$tmp=split("=", $arr2[4]);
-			echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><hr />\n";
+			echo " <a href=\"add.php?id=" . $tmp[1] . "&title=" . $arr2[10] ."\">add</a><hr />\n";
 
 			echo "<img src=\"http:" . $img3[4] . "\" alt=\"" . $arr3[10] . "\" height=\"100\" />";
 			echo $arr3[10];
 			$time=explode(">", $time3);
                         echo " - " .substr($time[1], 0, -6);
 			$tmp=split("=", $arr3[4]);
-			echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><hr />\n";
+			echo " <a href=\"add.php?id=" . $tmp[1] . "&title=" . $arr3[10] ."\">add</a><hr />\n";
 
 			echo "<img src=\"http:" . $img4[4] . "\" alt=\"" . $arr4[10] . "\" height=\"100\" />";
 			echo $arr3[10];
 			$time=explode(">", $time4);
                         echo " - " .substr($time[1], 0, -6);
 			$tmp=split("=", $arr3[4]);
-			echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><hr />\n";
+			echo " <a href=\"add.php?id=" . $tmp[1] . "&title=" . $arr4[10] . "\">add</a><hr />\n";
 
 			echo "<img src=\"http:" . $img5[4] . "\" alt=\"" . $arr5[10] . "\" height=\"100\" />";
 			echo $arr5[10];
 			$time=explode(">", $time5);
                         echo " - " .substr($time[1], 0, -6);
 			$tmp=split("=", $arr5[4]);
-			echo " <a href=\"add.php?add=" . $tmp[1] ."\">add</a><hr />\n";
+			echo " <a href=\"add.php?id=" . $tmp[1] . "&title=" . $arr5[10] . "\">add</a><hr />\n";
 		}
 	}
 }

@@ -89,6 +89,15 @@ if(isset($_POST["keyword"])){
 		}
 	}
 }
+$db = new SQLite3('youjay.db');
+$query="SELECT * FROM playlist";
+$results = $db->query($query);
+$row=count($results);
+echo $row . " brani presenti nella playlist.<hr />";
+echo "<b>Playlist corrente:</b><br />";
+while ($roba = $results->fetchArray())
+    print($roba['title']."<br />\n");
+echo $roba;
 ?>
 </body>
 </html>

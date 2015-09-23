@@ -11,7 +11,13 @@ essere un banale computer con un browser.
 *youjay* può essere usato per feste o cene con amici in cui non sia presente un dj. In cui tutti hanno da suggerire canzoni da ascoltare. 
 
 ## Installazione  e utilizzo##
-Per installare *youjay* è sufficiente copiare tutti i file in una directory di un server web. Richiamando _index.php_, tramite smartphon, si richiama la pagina principale di ricerca. Dal computer o server centralizzato, possibilmente collegato ad un impianto stereo, basta richiamare la pagina _player.php_ per ascoltare tutta la playlist in ordine sequenziale. E' possibile anche saltare un brano per passare a quello successivo successivo. Per funzionare è sufficente un server web con _php5_.
+Per installare *youjay* è sufficiente copiare i file *.php* e il file *.db* in una directory del server web.
+Poi bisogna lanciare lo script *download.sh* che è il demone che gestisce il download trasparente in brackground dei brani da youtube.
+Il file *player.sh* va lanciato a mano in modo da visualizzare sul monitor i video.
+
+## Requisiti di sistema ##
+Serve un server web con installato *php5* e il supporto a *sqlite3*.
+Inoltre bisogna installare il pacchetto *youtube-dl*.
 
 ## Ringraziamenti ##
 * Riccardo Mariani: per il brainstorming, la proprietà intellettuale e il casual testing.

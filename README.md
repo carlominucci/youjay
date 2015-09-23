@@ -17,7 +17,7 @@ Il file *player.sh* va lanciato a mano in modo da visualizzare sul monitor i vid
 
 ## Requisiti di sistema ##
 Serve un server web con installato *php5* e il supporto a *sqlite3*.
-Inoltre bisogna installare il pacchetto *youtube-dl*.
+Inoltre bisogna installare [youtube-dl](https://github.com/rg3/youtube-dl) 
 
 ## Ringraziamenti ##
 * Riccardo Mariani: per il brainstorming, la proprietà intellettuale e il casual testing.

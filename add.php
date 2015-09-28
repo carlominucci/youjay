@@ -12,7 +12,7 @@
 $data=date("U");
 $tmp=date("Ymd");
 
-$query="INSERT INTO playlist (videoid, title, play, download) VALUES (\"" . $_GET["id"] . "\", \"" . addslashes($_GET["title"]) . "\", \"FALSE\", \"FALSE\");";
+$query="INSERT INTO playlist (videoid, title, play, download) VALUES (\"" . ($_GET["id"]) . "\", \"" . str_ireplace("\"", "", $_GET["title"]) . "\", \"FALSE\", \"FALSE\");";
 
 $db = new SQLite3('youjay.db');
 $results = $db->query($query);

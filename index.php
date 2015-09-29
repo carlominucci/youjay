@@ -8,7 +8,13 @@
 <body>
 <img src="logo_small.png" alt="youjay" />
 <form action="index.php" method="post">
-<input type="text" size="35" name="keyword" />
+<input type="text" size="35" name="keyword" value="
+<?php
+if(isset($_POST["keyword"])){
+	echo $_POST['keyword'];
+}
+?>
+" />
 <input type="submit" value="cerca" />
 </form><hr />
 <?php

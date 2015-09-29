@@ -95,10 +95,15 @@ $results = $db->query($query);
 $queryn="SELECT COUNT(id) FROM playlist;";
 $row = $db->querySingle($queryn);
 //$row = $results->rowCount();
-echo $row . " brani presenti nella playlist.<hr />";
-echo "<b>Playlist corrente:</b><br />";
-while ($roba = $results->fetchArray())
-    print($roba['title']."<br />\n");
+echo $row . " brani presenti nella playlist.<hr />\n";
+echo "<b>Playlist corrente:</b><br />\n";
+while ($roba = $results->fetchArray()){
+	if($roba['download'] == 'FALSE'){
+		print("<div class=\"grigino\">" . $roba['title'] . "</div>\n");
+	}else{
+    	print($roba['title']."<br />\n");
+    }
+}
 echo $roba;
 ?>
 </body>

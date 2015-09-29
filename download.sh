@@ -1,5 +1,7 @@
 #!/bin/bash
 echo "Youjay download daemon starting..."
+rm -rf tmp
+mkdir tmp
 cd tmp
 while :
 do

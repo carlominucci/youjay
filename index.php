@@ -44,7 +44,7 @@ if(isset($_POST["keyword"])){
 			$videoid=explode("\"", $arrdata[4]);
 			preg_match("/title\=(.*?)\"\s+/si", $arraytitle[$keys[$i]], $title);
 			preg_match("/((\w+):)(\w+)/i", $arraytitle[$keys[$i]], $time);
-			$arraythumb=$arrayimg[$keysimg[$i]];
+			$arraythumb=$arrayimg[$keysimg[$i-2]];
 			preg_match("/\"\/\/(.*?)\.jpg/", $arraythumb, $thumb);
 			
 			echo "<img src=\"http://" . $thumb[1] . ".jpg\" alt=\"" . $title[1] . "/>";

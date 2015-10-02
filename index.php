@@ -8,13 +8,15 @@
 <body>
 <img src="logo_small.png" alt="youjay" />
 <form action="index.php" method="post">
-<input type="text" size="35" name="keyword" value="
+<input type="text" size="35" name="keyword"
 <?php
 if(isset($_POST["keyword"])){
+	echo "echo value=\"";
 	echo $_POST['keyword'];
+	echo "\"";
 }
 ?>
-" />
+ />
 <input type="submit" value="cerca" />
 </form><hr />
 <?php
@@ -30,7 +32,37 @@ if(isset($_POST["keyword"])){
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 		$result = curl_exec ($curl);
 		curl_close ($curl);
-		$arrresult=split("num-results", $result);
+		
+		
+		$arrayhtml=explode("\n", $result);
+		$arraytitle = preg_grep("/yt-lockup-content/", $arrayhtml);
+		$arrayimg = preg_grep("/yt-thumb video-thumb/", $arrayhtml);
+
+		$keys=(array_keys($arraytitle));
+		$keysimg=(array_keys($arrayimg));
+		for($i=2; $i<=6; $i++){
+			$arraytitle[$keys[$i]];
+			$arrdata=explode("=", $arraytitle[$keys[$i]]);
+			$videoid=explode("\"", $arrdata[4]);
+			//echo $videoid[0];
+			preg_match("/title\=(.*?)\"\s+/si", $arraytitle[$keys[$i]], $title);
+			//echo " " . str_ireplace("\"", "", $title[1]) . " ";
+			preg_match("/((\w+):)(\w+)/i", $arraytitle[$keys[$i]], $time);
+			//echo $time[0];
+			$arraythumb=$arrayimg[$keysimg[$i]];
+			preg_match("/\"\/\/(.*?)\.jpg/", $arraythumb, $thumb);
+			//print_r($arraythumb);
+			//echo " http://" . $thumb[1] . ".jpg\n";
+			//echo "\n";
+			
+			echo "<img src=\"http://" . $thumb[1] . ".jpg\" alt=\"" . $title[1] . "/>";
+			echo " " . str_ireplace("\"", "", $title[1]) . " - ";
+			echo $time[0];
+			echo " - <a href=\"add.php?id=" . $videoid[0] . "&title=" . str_ireplace("\"", "", $title[1]) . "\">add</a><hr />\n";
+		}
+		
+		
+		/*$arrresult=split("num-results", $result);
 		$nresults=split(" ", strip_tags($arrresult[1]));
 		if($nresults[2] == 0){
 			echo "La tua ricerca non ha prodotto risultati...";
@@ -56,7 +88,6 @@ if(isset($_POST["keyword"])){
 			$img3=split("\"", $arrimg[3]);
 			$img4=split("\"", $arrimg[4]);
 			$img5=split("\"", $arrimg[5]);
-
 
 			echo "<img src=\"http:" . $img1[4] . "\" alt=\"" . $arr1[10] . "\" height=\"100\" />";
 			echo $arr1[10];
@@ -92,7 +123,8 @@ if(isset($_POST["keyword"])){
                         echo " - " .substr($time[1], 0, -6);
 			$tmp=split("=", $arr5[4]);
 			echo " <a href=\"add.php?id=" . $tmp[1] . "&title=" . $arr5[10] . "\">add</a><hr />\n";
-		}
+			
+		}*/
 	}
 }
 $db = new SQLite3('youjay.db');

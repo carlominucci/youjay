@@ -19,7 +19,7 @@ if($row == 0){
 	?>
 	Traccia aggiunta alla playlist.<br />
 	<?php
-}elseif($row > 1){
+}elseif($row > 0){
 	echo "Il brano è già presente nella playlist<br />";
 }
 ?>

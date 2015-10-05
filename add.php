@@ -8,16 +8,22 @@
 
 <body>
 <?php
-
-$data=date("U");
-$tmp=date("Ymd");
-
-$query="INSERT INTO playlist (videoid, title, play, download) VALUES (\"" . ($_GET["id"]) . "\", \"" . str_ireplace("\"", "", $_GET["title"]) . "\", \"FALSE\", \"FALSE\");";
-
 $db = new SQLite3('youjay.db');
-$results = $db->query($query);
+	
+$queryn="SELECT COUNT(id) FROM playlist WHERE videoid = '" . $_GET["id"] . "'";
+$row = $db->querySingle($queryn);
+
+if($row == 0){
+	$query="INSERT INTO playlist (videoid, title, play, download) VALUES (\"" . ($_GET["id"]) . "\", \"" . str_ireplace("\"", "", $_GET["title"]) . "\", \"FALSE\", \"FALSE\");";
+	$results = $db->query($query);
+	?>
+	Traccia aggiunta alla playlist.<br />
+	<?php
+}elseif($row > 1){
+	echo "Il brano è già presente nella playlist<br />";
+}
 ?>
-Traccia aggiunta alla playlist.<br />
+
 <a href="index.php">Torna alla ricerca</a>
 </body>
 </html>

@@ -19,20 +19,24 @@ if(isset($_GET['delete'])){
 <body>
 <?php
 $query="SELECT videoid,title FROM playlist WHERE play = 'FALSE' AND download = 'TRUE' ORDER BY id LIMIT 1";
-//echo $query;
 $results = $db->query($query);
 
 echo "<b>Brano corrente:</b><br />";
 while ($roba = $results->fetchArray()){
     print($roba['title']."<br />\n");
    	$videoid = $roba['videoid']; 
-   	//echo $videoid;
 }
 if(isset($videoid)){
 	$query="UPDATE playlist SET play = 'TRUE' WHERE videoid = '" .  $videoid . "'";
 	$db->query($query);
+}elseif(!isset($videoid)){
+	$query="SELECT * FROM playlist ORDER BY RANDOM() LIMIT 1";
+	$results = $db->query($query);
+	while ($roba = $results->fetchArray()){
+		print($roba['title']."<br />\n");
+	   	$videoid = $roba['videoid']; 
+	}
 }
-
 ?>
 
 <div id="player"></div>
@@ -52,7 +56,6 @@ $query="SELECT * FROM playlist WHERE download = 'TRUE'";
 $results = $db->query($query);
 echo "<hr /><b>Brani nella playlist:</b><br />";
 while ($roba = $results->fetchArray()){
-    //print("<a href=\"player.php?delete=" . $roba['videoid'] . "\">rimuovi</a> " . $roba['title'] . "</a><br />\n");
     print($roba['title'] . "<br />\n");
 }
 ?>

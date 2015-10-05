@@ -9,7 +9,7 @@ do
 	if [ $download ] ; then
 			youtube-dl --id http://youtube.com/watch?v=$download
 			sqlite3 ../youjay.db "UPDATE playlist SET download = 'TRUE' WHERE videoid = '$download'"
-			echo "refresh..."
 	fi
+	echo "refresh..."
 	sleep 5;
 done

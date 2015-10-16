@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 echo "Youjay download daemon starting..."
-
+mkdir tmp
 cd tmp
 while :
 do

@@ -22,7 +22,7 @@ Per il player standalone serve che ci sia installato *mplayer*.
 Per il player web serve un browser che supporti *html5*.
 
 ## Ringraziamenti ##
-* Riccardo Mariani: per il brainstorming, la proprietà intellettuale e il casual testing.
+* Riccardo Mariani: per il brainstorming, la presunta proprietà intellettuale, il casual testing e il foglio di stile.
 * Rodolfo Brocchini: per la disponibilità della casa per le cene.
 * Fabio Napodano: per il dummy test e per l'email.
 

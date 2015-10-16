@@ -65,8 +65,9 @@ if(isset($_POST["keyword"])){
 
 		$keys=(array_keys($arraytitle));
 		$keysimg=(array_keys($arrayimg));
-		for($i=2; $i<=6; $i++){
+		for($i=2; $i<=8; $i++){
 			$arraytitle[$keys[$i]];
+			//print_r($arraytitle);
 			$arrdata=explode("=", $arraytitle[$keys[$i]]);
 			$videoid=explode("\"", $arrdata[4]);
 			preg_match("/title\=(.*?)\"\s+/si", $arraytitle[$keys[$i]], $title);

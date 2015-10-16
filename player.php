@@ -4,9 +4,11 @@ if(isset($_GET['delete'])){
 	if($_GET['delete'] == "all"){
 		$query="DELETE FROM playlist";
 		$db->query($query);
+		header("Location: player.php");
 	}elseif($_GET['delete'] != "all"){
 		$query="DELETE FROM playlist WHERE videoid='" . $_GET['delete'] . "'";
 		$db->query($query);
+		header("Location: player.php");
 	}
 }
 ?>

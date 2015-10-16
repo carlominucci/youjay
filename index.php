@@ -3,22 +3,49 @@
 <head>
 	<title>YouJay</title>
 	<link href="style.css" rel="stylesheet" type="text/css">
+	<link href="http://unicorn-ui.com/buttons/css/buttons.css" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Google Fonts embed code -->
+    <script type="text/javascript">
+        (function() {
+            var link_element = document.createElement("link"),
+                s = document.getElementsByTagName("script")[0];
+            if (window.location.protocol !== "http:" && window.location.protocol !== "https:") {
+                link_element.href = "http:";
+            }
+            link_element.href += "//fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800";
+            link_element.rel = "stylesheet";
+            link_element.type = "text/css";
+            s.parentNode.insertBefore(link_element, s);
+        })();
+    </script>
+
+    
 </head>
 
 <body>
+<div id="header">
 <img src="logo_small.png" alt="youjay" />
-<form action="index.php" method="post">
-<input type="text" size="35" name="keyword"
-<?php
+<p class="claim">Fai girare la tua musica!</p>
+</div>
+
+<div id="search">
+<form action="index.php" method="post" class="form-wrapper cf">
+<span class="input input--haruki">
+	<input class="input__field input__field--haruki" type="text" id="input-1" type="text" size="35" name="keyword" placeholder="cerca" required <?php
 if(isset($_POST["keyword"])){
 	echo "echo value=\"";
 	echo $_POST['keyword'];
 	echo "\"";
 }
-?>
- />
-<input type="submit" value="cerca" />
-</form><hr />
+?> /> <br> <input type="submit" value="cerca" class="button button-primary button-pill button-giant"/>
+</span>
+</form>
+</div>
+
+<p class="clear"></p>
+
+<div id="risultato">
 <?php
 if(isset($_POST["keyword"])){
 	if($_POST["keyword"] == ""){
@@ -47,10 +74,11 @@ if(isset($_POST["keyword"])){
 			$arraythumb=$arrayimg[$keysimg[$i-2]];
 			preg_match("/\"\/\/(.*?)\.jpg/", $arraythumb, $thumb);
 			
-			echo "<img src=\"http://" . $thumb[1] . ".jpg\" alt=\"" . $title[1] . "/>";
-			echo " " . str_ireplace("\"", "", $title[1]) . " - ";
+			echo "<a href=\"add.php?id=" . $videoid[0] . "&title=" . str_ireplace("\"", "", $title[1]) . "\">
+			<img src=\"http://" . $thumb[1] . ".jpg\" alt=\"" . $title[1] . " class=\"anteprima\"/></a><br>";
+			echo "<span class=\"info\"> " . str_ireplace("\"", "", $title[1]) . " [";
 			echo $time[0];
-			echo " - <a href=\"add.php?id=" . $videoid[0] . "&title=" . str_ireplace("\"", "", $title[1]) . "\">add</a><hr />\n";
+			echo "] <a href=\"add.php?id=" . $videoid[0] . "&title=" . str_ireplace("\"", "", $title[1]) . "\" class=\"button button-primary button-box button-small\"><i class=\"fa fa-plus\"></i></a></span><p class=\"clear spazio\"></p>\n";
 		}
 	}
 }
@@ -60,7 +88,7 @@ $results = $db->query($query);
 $queryn="SELECT COUNT(id) FROM playlist;";
 $row = $db->querySingle($queryn);
 
-echo $row . " brani presenti nella playlist.<hr />\n";
+echo $row . " brani presenti nella playlist.<hr>\n";
 echo "<b>Playlist corrente:</b><br />\n";
 while ($roba = $results->fetchArray()){
 	if($roba['download'] == 'FALSE'){
@@ -71,5 +99,8 @@ while ($roba = $results->fetchArray()){
 }
 echo $roba;
 ?>
+
+</div><!-- fine risultato -->
+
 </body>
 </html>

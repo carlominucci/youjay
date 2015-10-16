@@ -1,19 +1,112 @@
 body{
-    font-family: Verdana;
-    background-color: #eee;
-    border: 5px solid #fff;
-    margin: 0px;
-    padding: 10px;
-}
-
-hr{
-	border: 0;
-    height: 2px;
-    background: #ddd;
-    margin-left: -10px;
-    margin-right: -10px;
+    font-family: "Open Sans";
+    background-color: #fff;
+    margin: 0px;	
+	text-align: center;
 }
 
 .grigino{
 	color: #aaa;
 }
+
+.input--haruki {
+	margin: 4em 1em 1em;
+}
+
+.input__field--haruki {
+	width: 70%;
+	background: transparent;
+	color: #AFB5BB;
+	font-size: 3em;
+}
+
+.input__label--haruki {
+	position: absolute;
+	width: 100%;
+	text-align: left;
+	pointer-events: none;
+}
+
+.input__label-content--haruki {
+	transition: transform 0.3s;
+}
+
+.input__label--haruki::before,
+.input__label--haruki::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 4px;
+	background: #6a7989;
+	transition: transform 0.3s;
+}
+
+.input__label--haruki::before {
+	top: 0;
+}
+
+.input__label--haruki::after {
+	bottom: 0;
+}
+
+.input__field--haruki:focus + .input__label--haruki .input__label-content--haruki,
+.input--filled .input__label-content--haruki {
+	transform: translate3d(0, -90%, 0);
+}
+
+.input__field--haruki:focus + .input__label--haruki::before,
+.input--filled .input__label--haruki::before {
+	transform: translate3d(0, -0.5em, 0);
+}
+
+.input__field--haruki:focus + .input__label--haruki::after,
+.input--filled .input__label--haruki::after {
+	transform: translate3d(0, 0.5em, 0);
+}
+input[type=submit] {
+	margin: 20px;
+    background: #1b9af7;
+    border: 0 none;
+    cursor: pointer;
+    line-height: 1em;
+    font-size: 2em;
+	-webkit-border-radius: 5px;
+	border-radius: 10px;
+	color: #fff;
+}
+
+.clear { clear: both; }
+
+div.rigacontainer {
+	width: 90%;
+    height: 200px;
+    display: table;
+}
+ 
+div.rigacontent {
+    display:table-cell;
+    vertical-align:middle;
+}
+.anteprima {
+	vertical-align: text-bottom;	
+	padding: 10px;
+}
+img.anteprima {
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+img.anteprima:hover {
+  -webkit-transform: rotate(-360deg);
+     -moz-transform: rotate(-360deg);
+       -o-transform: rotate(-360deg);
+      -ms-transform: rotate(-360deg);
+          transform: rotate(-360deg);
+}
+.spazio { height: 40px; }
+hr { width: 80%; }
+.claim { margin: 0 0 15px; }

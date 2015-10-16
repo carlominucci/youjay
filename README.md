@@ -16,7 +16,7 @@ Poi bisogna lanciare lo script *download.sh* che è il demone che gestisce il do
 Il file *player.sh* va lanciato a mano in modo da visualizzare sul monitor i video.
 
 ## Requisiti di sistema ##
-Un server web con installato *php5* e il supporto a *sqlite3*.
+Un server web con installato *php5*, *php5-curl*, *php5-sqlite3* e il client *sqlite3* per la riga di comando.
 Installare [youtube-dl](https://github.com/rg3/youtube-dl).
 Per il player standalone serve che ci sia installato *mplayer*.
 Per il player web serve un browser che supporti *html5*.

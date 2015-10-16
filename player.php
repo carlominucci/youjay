@@ -65,6 +65,7 @@ Your browser does not support the video tag.
     function reloadPage(e) {
         location.assign("player.php");
     }
+    //window.alert(window.innerWidth + ' ' + window.innerHeight);
 </script>
 </div>
 <hr />

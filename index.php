@@ -65,21 +65,26 @@ if(isset($_POST["keyword"])){
 
 		$keys=(array_keys($arraytitle));
 		$keysimg=(array_keys($arrayimg));
-		for($i=2; $i<=8; $i++){
+		$imax=6;
+		for($i=2; $i<=$imax; $i++){
 			$arraytitle[$keys[$i]];
-			//print_r($arraytitle);
-			$arrdata=explode("=", $arraytitle[$keys[$i]]);
-			$videoid=explode("\"", $arrdata[4]);
-			preg_match("/title\=(.*?)\"\s+/si", $arraytitle[$keys[$i]], $title);
-			preg_match("/((\w+):)(\w+)/i", $arraytitle[$keys[$i]], $time);
-			$arraythumb=$arrayimg[$keysimg[$i-2]];
-			preg_match("/\"\/\/(.*?)\.jpg/", $arraythumb, $thumb);
+			if(stristr($arraytitle[$keys[$i]], "full album")){
+				$imax++;
+			}else{
+				//print_r($arraytitle);
+				$arrdata=explode("=", $arraytitle[$keys[$i]]);
+				$videoid=explode("\"", $arrdata[4]);
+				preg_match("/title\=(.*?)\"\s+/si", $arraytitle[$keys[$i]], $title);
+				preg_match("/((\w+):)(\w+)/i", $arraytitle[$keys[$i]], $time);
+				$arraythumb=$arrayimg[$keysimg[$i-2]];
+				preg_match("/\"\/\/(.*?)\.jpg/", $arraythumb, $thumb);
 			
-			echo "<a href=\"add.php?id=" . $videoid[0] . "&title=" . str_ireplace("\"", "", $title[1]) . "\">
-			<img src=\"http://" . $thumb[1] . ".jpg\" alt=\"" . $title[1] . " class=\"anteprima\"/></a><br>";
-			echo "<span class=\"info\"> " . str_ireplace("\"", "", $title[1]) . " [";
-			echo $time[0];
-			echo "] <a href=\"add.php?id=" . $videoid[0] . "&title=" . str_ireplace("\"", "", $title[1]) . "\" class=\"button button-primary button-box button-small\"><i class=\"fa fa-plus\"></i></a></span><p class=\"clear spazio\"></p>\n";
+				echo "<a href=\"add.php?id=" . $videoid[0] . "&title=" . str_ireplace("\"", "", $title[1]) . "\">
+				<img src=\"http://" . $thumb[1] . ".jpg\" alt=\"" . $title[1] . " class=\"anteprima\"/></a><br>";
+				echo "<span class=\"info\"> " . str_ireplace("\"", "", $title[1]) . " [";
+				echo $time[0];
+				echo "] <a href=\"add.php?id=" . $videoid[0] . "&title=" . str_ireplace("\"", "", $title[1]) . "\" class=\"button button-primary button-box button-small\"><i class=\"fa fa-plus\"></i></a></span><p class=\"clear spazio\"></p>\n";
+			}
 		}
 	}
 }

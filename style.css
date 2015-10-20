@@ -108,5 +108,5 @@ img.anteprima:hover {
           transform: rotate(-360deg);
 }
 .spazio { height: 40px; }
-hr { width: 80%; }
+hr { width: 100%; }
 .claim { margin: 0 0 15px; }

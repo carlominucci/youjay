@@ -68,17 +68,17 @@ if(isset($_POST["keyword"])){
 		$imax=6;
 		for($i=2; $i<=$imax; $i++){
 			$arraytitle[$keys[$i]];
-			if(stristr($arraytitle[$keys[$i]], "full album")){
+			$arrdata=explode("=", $arraytitle[$keys[$i]]);
+			$videoid=explode("\"", $arrdata[4]);
+
+			if(stristr($arraytitle[$keys[$i]], "full album") || stristr($arraytitle[$keys[$i]], "full concert") || $videoid[0] == ""){
 				$imax++;
 			}else{
 				//print_r($arraytitle);
-				$arrdata=explode("=", $arraytitle[$keys[$i]]);
-				$videoid=explode("\"", $arrdata[4]);
 				preg_match("/title\=(.*?)\"\s+/si", $arraytitle[$keys[$i]], $title);
 				preg_match("/((\w+):)(\w+)/i", $arraytitle[$keys[$i]], $time);
 				$arraythumb=$arrayimg[$keysimg[$i-2]];
 				preg_match("/\"\/\/(.*?)\.jpg/", $arraythumb, $thumb);
-			
 				echo "<a href=\"add.php?id=" . $videoid[0] . "&title=" . str_ireplace("\"", "", $title[1]) . "\">
 				<img src=\"http://" . $thumb[1] . ".jpg\" alt=\"" . $title[1] . " class=\"anteprima\"/></a><br>";
 				echo "<span class=\"info\"> " . str_ireplace("\"", "", $title[1]) . " [";

@@ -39,7 +39,7 @@ if(isset($_GET['delete'])){
 $query="SELECT videoid,title FROM playlist WHERE play = 'FALSE' AND download = 'TRUE' ORDER BY id LIMIT 1";
 $results = $db->query($query);
 
-echo "<b>Brano corrente:</b><br />";
+/*echo "<b>Brano corrente:</b><br />";
 while ($roba = $results->fetchArray()){
     print($roba['title']."<br />\n");
    	$videoid = $roba['videoid']; 
@@ -54,10 +54,10 @@ if(isset($videoid)){
 		print($roba['title']."<br />\n");
 	   	$videoid = $roba['videoid']; 
 	}
-}
+}*/
 ?>
 
-<div id="player"></div>
+<!-- <div id="player"></div>
 <video width="320" height="240" controls autoplay id=video>
   <source src="tmp/<?php echo $videoid; ?>.mp4" type="video/mp4">
 Your browser does not support the video tag.
@@ -69,7 +69,7 @@ Your browser does not support the video tag.
     }
     //window.alert(window.innerWidth + ' ' + window.innerHeight);
 </script>
-</div>
+</div>-->
 <hr />
 
 <?php
@@ -77,11 +77,11 @@ $query="SELECT * FROM playlist WHERE download = 'TRUE'";
 $results = $db->query($query);
 echo "<b>Brani nella playlist:</b><br />";
 while ($roba = $results->fetchArray()){
-    print($roba['title'] . "<br />\n");
+    print($roba['title'] . " <a href=\"player.php?delete=" . $roba['videoid'] . "\">[rimuovi]</a><br />\n");
 }
 ?>
-	<a href="player.php">salta video...</a><br />
-	<a href="player.php?delete=<?php echo $videoid; ?>">rimuovi brano corrente dalla playlist...</a><br />
-	<a href="player.php?delete=all">cancella playlist...</a>
+	<!-- <a href="player.php">salta video...</a><br />
+	<a href="player.php?delete=<?php echo $videoid; ?>">rimuovi brano corrente dalla playlist...</a><br /> -->
+	<hr /><a href="player.php?delete=all">cancella playlist...</a>
   </body>
 </html>

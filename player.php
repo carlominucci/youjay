@@ -59,7 +59,7 @@ if(isset($videoid)){
 
 <!-- <div id="player"></div>
 <video width="320" height="240" controls autoplay id=video>
-  <source src="tmp/<?php echo $videoid; ?>.mp4" type="video/mp4">
+  <source src="tmp/<?php // echo $videoid; ?>.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 <script type='text/javascript'>
@@ -70,7 +70,6 @@ Your browser does not support the video tag.
     //window.alert(window.innerWidth + ' ' + window.innerHeight);
 </script>
 </div>-->
-<hr />
 
 <?php
 $query="SELECT * FROM playlist WHERE download = 'TRUE'";

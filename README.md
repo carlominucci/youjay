@@ -14,11 +14,14 @@ essere un banale computer con un browser.
 Per installare *youjay* è sufficiente copiare i file *.php* e il file *.db* in una directory del server web.
 Poi bisogna lanciare lo script *download.sh* che è il demone che gestisce il download trasparente in brackground dei brani da youtube.
 Il file *player.sh* va lanciato a mano in modo da visualizzare sul monitor i video.
+Se non funziona regorlamente bisogna dare i permessi *777* al file *youjay.db*.
 
 ## Requisiti di sistema ##
-Un server web con installato *php5*, *php5-curl*, *php5-sqlite3* e il client *sqlite3* per la riga di comando.
+Un server web con installato *php5*, *php5-curl*, *php5-sqlite3 e il client *sqlite3* per la riga di comando.
 Installare [youtube-dl](https://github.com/rg3/youtube-dl).
+
 Per il player standalone serve che ci sia installato *mplayer*.
+
 Per il player web serve un browser che supporti *html5*.
 
 ## Ringraziamenti ##

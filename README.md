@@ -2,6 +2,9 @@
 
 Con *youjay* tutti diventano un unico dj.
 
+Presenti alla Maker Faire 2015 di Rimini
+![Maker Faire Rimini](https://static.wixstatic.com/media/efa623_ccdf135099c34702a6e9c068b8415a88.gif)
+
 ## Concetto ##
 *youjay* è un jukebox gratuito usabile da smartphone tramite comoda webapp, non c'è bisogno di installare nulla sul telefono.
 Ogni utente, tramite la funzione di ricerca, può aggiungere una o più canzoni alla playlist del server centralizzato, che può

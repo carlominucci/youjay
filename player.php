@@ -39,12 +39,14 @@ if(isset($videoid)){
 	   	$videoid = $roba['videoid']; 
 	}
 }
+
+
 ?>
 
 <div class="content">
 	<div class="col1">
 		<div id="player"></div>
-		<video width="640" height="480" controls autoplay id=video>
+		<video width="640" height="480" controls autoplay id=video poster="logo_small.png">
 			<source src="tmp/<?php  echo $videoid; ?>.mp4" type="video/mp4">
 			Your browser does not support the video tag.
 		</video>
@@ -80,7 +82,8 @@ if(isset($videoid)){
 			}
 			$query="UPDATE playlist SET play = 'TRUE' WHERE videoid = '$videoid'";
 			$db->query($query);
-			print($roba['title'] . " <a class=\"btn\" href=\"player.php?delete=" . $roba['videoid'] . "\">-</a> <a class=\"btn\" href=\"#\">></a></div>\n");
+			//print($roba['title'] . " <a class=\"btn\" href=\"player.php?delete=" . $roba['videoid'] . "\">-</a> <a class=\"btn\" href=\"player.php?playvideo=" . $roba['videoid'] . "\">►</a></div>\n");
+			print($roba['title'] . "</div>");
 		}
 		?>
 	</div>

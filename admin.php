@@ -19,20 +19,6 @@ if(isset($_GET['delete'])){
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link href="http://unicorn-ui.com/buttons/css/buttons.css" rel="stylesheet" type="text/css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- Google Fonts embed code -->
-    <script type="text/javascript">
-        (function() {
-            var link_element = document.createElement("link"),
-                s = document.getElementsByTagName("script")[0];
-            if (window.location.protocol !== "http:" && window.location.protocol !== "https:") {
-                link_element.href = "http:";
-            }
-            link_element.href += "//fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800";
-            link_element.rel = "stylesheet";
-            link_element.type = "text/css";
-            s.parentNode.insertBefore(link_element, s);
-        })();
-    </script>
 </head>
 <body>
 <?php

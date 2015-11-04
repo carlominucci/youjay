@@ -9,6 +9,33 @@ body{
 	color: #aaa;
 }
 
+table, td, tr{
+	margin: 0px;
+	padding: 0px;
+	border-collapse: collapse;
+	vertical-align: top;
+	width: 100%;
+	font-size: 20px;
+}
+
+.playersx{
+	background-color: #a84;
+	width: 50%;
+}
+.playerdx{
+	background-color: #f82;
+	width: 50%;
+}
+.nowplay{
+	font-size: 25px;
+	background-color: #834;	
+}
+
+.banner{
+	font-size: 40px;
+	background-color: #de9;
+}
+
 .input--haruki {
 	margin: 4em 1em 1em;
 }

@@ -43,8 +43,8 @@ if(isset($videoid)){
 		<td class="playersx">
 			<div id="player"></div>
 			<video width="640" height="480" controls autoplay id=video>
-			  <source src="tmp/<?php  echo $videoid; ?>.mp4" type="video/mp4">
-			Your browser does not support the video tag.
+				<source src="tmp/<?php  echo $videoid; ?>.mp4" type="video/mp4">
+				Your browser does not support the video tag.
 			</video>
 			<script type='text/javascript'>
 				document.getElementById('video').addEventListener('ended',reloadPage,false);
@@ -55,7 +55,9 @@ if(isset($videoid)){
 			</script>
 			<?php 
 				echo "<br /><b>Brano corrente:</b><br />";
-					print($videotitle."<br />\n");
+				print($videotitle."<br />\n");
+				$query="UPDATE playlist SET play = 'TRUE' WHERE videoid = '$videoid'";
+				$db->query($query);
 			?>
 			<a href="player.php?delete=all">cancella playlist</a><br />
 			<a href="player.php?delete=<?php echo $videoid; ?>">rimuovi brano corrente</a><br />

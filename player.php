@@ -4,13 +4,14 @@ if(isset($_GET['delete'])){
 	if($_GET['delete'] == "all"){
 		$query="DELETE FROM playlist";
 		$db->query($query);
-		header("Location: player.php");
+		header("Location: player.php#nowplay");
 	}elseif($_GET['delete'] != "all"){
 		$query="DELETE FROM playlist WHERE videoid='" . $_GET['delete'] . "'";
 		$db->query($query);
-		header("Location: player.php");
+		header("Location: player.php#nowplay");
 	}
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,7 +44,7 @@ if(isset($videoid)){
 
 ?>
 
-<div class="content">
+
 	<div class="col1">
 		<div id="player"></div>
 		<video width="640" height="480" controls autoplay id=video poster="logo_small.png" class="videoplayer">
@@ -62,18 +63,19 @@ if(isset($videoid)){
 			print($videotitle."<br />\n");
 
 		?>
-		<a href="player.php?delete=all"><img src="delplaylist.png" alt="cancella playlist" /></a>
-		<a href="player.php?delete=<?php echo $videoid; ?>"><img src="delsong.png" alt="rimuovi brano corrente" /></a>
-		<a href="player.php"><img src="next.png" alt="prossimo brano" /></a></div>
+		<a href="player.php?delete=all"><img class="tile" src="delplaylist.png" alt="cancella playlist" /></a>
+		<a href="player.php?delete=<?php echo $videoid; ?>"><img class="tile" src="delsong.png" alt="rimuovi brano corrente" /></a>
+		<a href="player.php"><img class="tile" src="next.png" alt="prossimo brano" /></a></div>
 	</div>
-	<div class="col2">
+	<div id="col2">
 		<?php
 		$query="SELECT * FROM playlist WHERE download = 'TRUE'";
 		$results = $db->query($query);
 		while ($roba = $results->fetchArray()){
 			if($roba['videoid'] == $videoid){
 				echo "<div class=\"nowplay\">";
-				echo "<img src=\"play.png\" alt=\"now play\" /> ";
+				echo "<a name=\"nowplay\">";
+				echo "<img src=\"play.png\" alt=\"now play\" /></a> ";
 			}else{
 				echo "<div>";
 			}
@@ -87,7 +89,7 @@ if(isset($videoid)){
 		}
 		?>
 	</div>
-</div>
+
 
   </body>
 </html>

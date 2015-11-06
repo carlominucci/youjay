@@ -46,6 +46,12 @@ body{
 	overflow: auto;
 }
 
+.videoplayer{
+	background-color: #000;
+	padding: 10px;
+	border-radius: 5px;
+}
+
 .nowplay{
 	font-size: 25px;
 	background-color: #834;	

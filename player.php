@@ -46,7 +46,7 @@ if(isset($videoid)){
 <div class="content">
 	<div class="col1">
 		<div id="player"></div>
-		<video width="640" height="480" controls autoplay id=video poster="logo_small.png">
+		<video width="640" height="480" controls autoplay id=video poster="logo_small.png" class="videoplayer">
 			<source src="tmp/<?php  echo $videoid; ?>.mp4" type="video/mp4">
 			Your browser does not support the video tag.
 		</video>

@@ -58,22 +58,22 @@ if(isset($videoid)){
 			//window.alert(window.innerWidth + ' ' + window.innerHeight);
 		</script>
 		<?php 
-			echo "<br /><b>Brano corrente:</b><br />";
+			echo "<div class=\"branocorrente\">";
 			print($videotitle."<br />\n");
 
 		?>
-		<a href="player.php?delete=all">cancella playlist</a><br />
-		<a href="player.php?delete=<?php echo $videoid; ?>">rimuovi brano corrente</a><br />
-		<a href="player.php">prossimo brano</a>
+		<a href="player.php?delete=all"><img src="delplaylist.png" alt="cancella playlist" /></a>
+		<a href="player.php?delete=<?php echo $videoid; ?>"><img src="delsong.png" alt="rimuovi brano corrente" /></a>
+		<a href="player.php"><img src="next.png" alt="prossimo brano" /></a></div>
 	</div>
 	<div class="col2">
 		<?php
 		$query="SELECT * FROM playlist WHERE download = 'TRUE'";
 		$results = $db->query($query);
-		echo "<b>Brani nella playlist:</b><br />";
 		while ($roba = $results->fetchArray()){
 			if($roba['videoid'] == $videoid){
 				echo "<div class=\"nowplay\">";
+				echo "<img src=\"play.png\" alt=\"now play\" /> ";
 			}else{
 				echo "<div>";
 			}

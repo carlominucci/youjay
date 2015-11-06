@@ -1,6 +1,6 @@
 body{
-    font-family: "sans-serif";
-    background-color: #fff;
+    font-family: "serif";
+    background-color: #008a00;
     margin: 0px;	
 	text-align: center;
 }
@@ -35,13 +35,13 @@ body{
 	float:left;
 	text-align: left; 
 	font-size: 1.5em;
-	background-color: #eee;
+	background-color: #fa6800;
 	padding: 0px;
 }
 	
 .col2 {
 	margin-left:45%; 
-	background-color:#;
+	background-color: #1ba1e2;
 	padding: 10px;
 	overflow: auto;
 	text-align: left;
@@ -60,7 +60,9 @@ body{
 
 .nowplay{
 	font-size: 25px;
-	background-color: #834;	
+	background-color: #d8c100;
+	padding: 5px;
+	padding-left: 20px;
 }
 
 .input--haruki {
@@ -162,5 +164,5 @@ img.anteprima:hover {
           transform: rotate(-360deg);
 }
 .spazio { height: 40px; }
-hr { width: 100%; }
+hr { width: 99%; }
 .claim { margin: 0 0 15px; }

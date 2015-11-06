@@ -29,7 +29,6 @@ Per il player standalone serve che ci sia installato *mplayer*.
 * Riccardo Mariani: per il brainstorming, la presunta proprietà intellettuale, il casual testing e il foglio di stile.
 * Rodolfo Brocchini: per la disponibilità della casa per le cene.
 * Fabio Napodano: per il dummy test e per l'email.
-* sixsixfive per le icone https://openclipart.org/user-detail/sixsixfive
 
 ## Problemi noti ##
 Pare che, per motivi misteriosi, non giri sui server di altervista.

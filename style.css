@@ -31,25 +31,31 @@ body{
 }
 
 .col1 {
-	width:55%;
+	width: 640px;
 	float:left;
-	text-align: center; 
+	text-align: left; 
 	font-size: 1.5em;
 	background-color: #eee;
-	padding: 5px;
+	padding: 0px;
 }
 	
 .col2 {
 	margin-left:45%; 
 	background-color:#;
-	padding: 5px;
+	padding: 10px;
 	overflow: auto;
+	text-align: left;
+	line-height: 20px;
 }
 
 .videoplayer{
 	background-color: #000;
+	//padding: 10px;
+	//border-radius: 20px;
+}
+
+.branocorrente{
 	padding: 10px;
-	border-radius: 5px;
 }
 
 .nowplay{

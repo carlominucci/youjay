@@ -72,7 +72,7 @@ body{
 	padding: 10px;
 }
 
-.nowplay{
+#nowplay{
 	font-size: 25px;
 	background-color: #d8c100;
 	padding: 5px;

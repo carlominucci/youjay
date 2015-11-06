@@ -48,11 +48,13 @@ if(isset($videoid)){
 
 	<div class="col1">
 		<div id="player"></div>
-		<video width="640" height="480" controls autoplay id=video poster="logo_small.png" class="videoplayer">
+		<video width="640" height="480" controls autoplay id=video poster="logo.png" class="videoplayer">
 			<source src="tmp/<?php  echo $videoid; ?>.mp4" type="video/mp4">
 			Your browser does not support the video tag.
 		</video>
 		<script type='text/javascript'>
+			document.getElementById( 'bottom' ).scrollIntoView();
+    window.setTimeout( function () { top(); }, 2000 );
 			document.getElementById('video').addEventListener('ended',reloadPage,false);
 			function reloadPage(e) {
 				location.assign("player.php");
@@ -60,13 +62,18 @@ if(isset($videoid)){
 			//window.alert(window.innerWidth + ' ' + window.innerHeight);
 		</script>
 		<?php 
-			echo "<div class=\"branocorrente\">";
-			print($videotitle."<br />\n");
-
+			
+			if(isset($videotitle)){
+				echo "<div class=\"branocorrente\">";
+				print($videotitle."<br />\n");
+				?><a href="player.php?delete=all"><img class="tile" src="delplaylist.png" alt="cancella playlist" /></a>
+				<a href="player.php?delete=<?php echo $videoid; ?>"><img class="tile" src="delsong.png" alt="rimuovi brano corrente" /></a>
+				<a href="player.php"><img class="tile" src="next.png" alt="prossimo brano" /></a>
+				</div><?php
+			}else{
+				echo "<br /><b>Nessun brano presente nella playlist.</b><br /><br />";
+			}
 		?>
-		<a href="player.php?delete=all"><img class="tile" src="delplaylist.png" alt="cancella playlist" /></a>
-		<a href="player.php?delete=<?php echo $videoid; ?>"><img class="tile" src="delsong.png" alt="rimuovi brano corrente" /></a>
-		<a href="player.php"><img class="tile" src="next.png" alt="prossimo brano" /></a></div>
 	</div>
 	<div id="col2">
 		<?php
@@ -74,7 +81,7 @@ if(isset($videoid)){
 		$results = $db->query($query);
 		while ($roba = $results->fetchArray()){
 			if($roba['videoid'] == $videoid){
-				echo "<div class=\"nowplay\">";
+				echo "<div id=\"nowplay\">";
 				echo "<a name=\"nowplay\">";
 				echo "<img src=\"play.png\" alt=\"now play\" /></a> ";
 			}else{

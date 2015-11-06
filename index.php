@@ -80,8 +80,7 @@ $results = $db->query($query);
 $queryn="SELECT COUNT(id) FROM playlist;";
 $row = $db->querySingle($queryn);
 
-echo $row . " brani presenti nella playlist.<hr>\n";
-echo "<b>Playlist corrente:</b><br />\n";
+echo "<b>Playlist corrente</b> ( ". $row . " brani in totale):<br /><br />\n";
 while ($roba = $results->fetchArray()){
 	if($roba['download'] == 'FALSE'){
 		print("<div class=\"grigino\">" . $roba['title'] . "</div>\n");

@@ -57,7 +57,7 @@ if(isset($videoid)){
 		<script type='text/javascript'>
 			document.getElementById('video').addEventListener('ended',reloadPage,false);
 			function reloadPage(e) {
-				location.assign("player.php");
+				location.assign("player.php?delete=next");
 			}
 			//window.alert(window.innerWidth + ' ' + window.innerHeight);
 		</script>

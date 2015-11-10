@@ -5,9 +5,11 @@ if(isset($_GET['delete'])){
 		$query="DELETE FROM playlist";
 		$db->query($query);
 		header("Location: player.php#nowplay");
-	}elseif($_GET['delete'] != "all"){
+	}elseif($_GET['delete'] != "all" || $_GET['delete'] != "next"){
 		$query="DELETE FROM playlist WHERE videoid='" . $_GET['delete'] . "'";
 		$db->query($query);
+		header("Location: player.php#nowplay");
+	}elseif($_GET['delete'] == "next"){
 		header("Location: player.php#nowplay");
 	}
 }
@@ -68,7 +70,7 @@ if(isset($videoid)){
 				print($videotitle."<br />\n");
 				?><a href="player.php?delete=all"><img class="tile" src="delplaylist.png" alt="cancella playlist" /></a>
 				<a href="player.php?delete=<?php echo $videoid; ?>"><img class="tile" src="delsong.png" alt="rimuovi brano corrente" /></a>
-				<a href="player.php"><img class="tile" src="next.png" alt="prossimo brano" /></a>
+				<a href="player.php?delete=next"><img class="tile" src="next.png" alt="prossimo brano" /></a>
 				</div><?php
 			}else{
 				echo "<br /><b>Nessun brano presente nella playlist.</b><br /><br />";

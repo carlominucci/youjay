@@ -55,8 +55,6 @@ if(isset($videoid)){
 			Your browser does not support the video tag.
 		</video>
 		<script type='text/javascript'>
-			document.getElementById( 'bottom' ).scrollIntoView();
-    window.setTimeout( function () { top(); }, 2000 );
 			document.getElementById('video').addEventListener('ended',reloadPage,false);
 			function reloadPage(e) {
 				location.assign("player.php");

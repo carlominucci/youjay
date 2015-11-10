@@ -57,7 +57,11 @@ if(isset($_POST["keyword"])){
 			$arraytitle[$keys[$i]];
 			$arrdata=explode("=", $arraytitle[$keys[$i]]);
 			$videoid=explode("\"", $arrdata[4]);
-			if(stristr($arraytitle[$keys[$i]], "full album") || stristr($arraytitle[$keys[$i]], "full concert") || $videoid[0] == ""){
+			if(stristr($arraytitle[$keys[$i]], "full album")
+			|| stristr($arraytitle[$keys[$i]], "full concert")
+			|| stristr($arraytitle[$keys[$i]], "playlist")
+			|| stristr($arraytitle[$keys[$i]], "full show")
+			|| $videoid[0] == ""){
 				$imax++;
 			}else{
 				//print_r($arraytitle);

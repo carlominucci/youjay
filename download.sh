@@ -13,7 +13,7 @@ do
 	fi
 	echo "refresh..."
 	sleep 5;
-	df=$(df -h | grep "/dev/" | awk '{print $5}' | tr -d "%")
+	df=$(df -h | head -2 | tail -1 | awk '{print $5}' | tr -d "%")
 	if [ $df -gt "90" ] ; then
 		echo "delete most old video..."
 		idold=$(sqlite3 ../youjay.db "SELECT videoid FROM playlist ORDER BY id;" | head -1);
